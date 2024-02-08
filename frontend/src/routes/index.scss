@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,600;6..12,700;6..12,800;6..12,900&family=Nunito:wght@300;400;700&display=swap");
+
+:root {
+	--bg: black;
+	--text: white;
+	--accent: rgb(255, 68, 0);
+	--accent-light: rgb(255, 145, 105);
+	--accent-reverse: rgb(0, 187, 255);
+	--accent-reverse-light: rgb(139, 201, 255);
+
+	--overlay: rgba(255, 255, 255, 0.005);
+
+	@media (prefers-color-scheme: light) {
+		--bg: #eee;
+		--text: black;
+
+		--overlay: rgba(0, 0, 0, 0.2);
+	}
+}
+
+body {
+	background-color: var(--bg);
+	color: var(--text);
+
+	font-family: "Nunito", sans-serif;
+	font-family: "Nunito Sans", sans-serif;
+
+	margin: 0 1rem;
+}
+
+a {
+	text-decoration: none;
+	color: var(--accent);
+}
+
+button[type="submit"] {
+	padding: 0.5rem 1rem;
+	border-radius: 5px;
+	border: none;
+
+	background-color: var(--accent);
+	color: black;
+	font-size: 1rem;
+	font-family: inherit;
+	cursor: pointer;
+}
+
+table {
+	margin: 1rem;
+	border: 2px solid var(--text);
+	border-radius: 10px;
+	border-collapse: separate;
+	border-spacing: 0;
+	overflow: hidden;
+
+	h3 {
+		margin: 0;
+		text-align: center;
+	}
+
+	th,
+	td {
+		padding: 0.5rem;
+		border: 1px solid var(--text);
+	}
+
+	th {
+		font-weight: 800;
+		font-size: 1.25rem;
+		border-bottom-width: 3px;
+	}
+
+	tr > :is(th, td):first-child {
+		border-right-width: 3px;
+		text-align: right;
+	}
+
+	tr:first-child th:first-child {
+		border-top-left-radius: 8px;
+	}
+	tr:first-child th:last-child {
+		border-top-right-radius: 8px;
+	}
+	tr:last-child td:first-child {
+		border-bottom-left-radius: 8px;
+	}
+	tr:last-child td:last-child {
+		border-bottom-right-radius: 8px;
+	}
+}
